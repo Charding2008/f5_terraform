@@ -1,16 +1,10 @@
 {
     "schemaVersion": "1.0.0",
     "class": "Device",
-    "async": true,
     "label": "Basic onboarding",
     "Common": {
         "class": "Tenant",
         "hostname": "${local_host}.example.com",
-	"myLicense": {
-            "class": "License",
-            "licenseType": "regKey",
-            "regKey": "${regkey}"
-        },
         "dbvars": {
             "class": "DbVariables",
             "ui.advisory.enabled": true,
@@ -43,7 +37,7 @@
         },
         "external": {
             "class": "VLAN",
-            "tag": 1000,
+            "tag": 4094,
             "mtu": 1500,
             "interfaces": [
                 {
@@ -54,7 +48,7 @@
         },
         "external-self": {
             "class": "SelfIp",
-            "address": "${local_selfip1}/24",
+            "address": "${local_selfip}/24",
             "vlan": "external",
             "allowService": "default",
             "trafficGroup": "traffic-group-local-only"
